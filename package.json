@@ -25,9 +25,10 @@
     "electron-rebuild": "^1.4.0"
   },
   "dependencies": {
+    "d3": "^4.13.0",
     "data-table": "^2.0.0",
     "influxdb-nodejs": "^2.7.6",
-    "plotly": "^1.0.6",
+    "rickshaw": "^1.6.5",
     "serialport": "^6.1.1"
   }
 }

@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<!-- <script src="https://d3js.org/d3.v4.min.js"></script>-->
+	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+	<script src="/home/dmamalis/workspace/FDF/apollopro_desktop/node_modules/rickshaw/vendor/d3.v3.js"></script>
+	<script src="/home/dmamalis/workspace/FDF/apollopro_desktop/node_modules/rickshaw/rickshaw.js"></script>
+
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Class.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Renderer.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Renderer.Stack.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Renderer.Line.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.RangeSlider.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.HoverDetail.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Annotate.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Legend.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Axis.Time.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Toggle.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Order.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Behavior.Series.Highlight.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Smoother.js"></script>
+	<!-- <script src="./node_modules/rickshaw/src/js/Rickshaw.Graph.Unstacker.js"></script> -->
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Fixtures.Time.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Fixtures.RandomData.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Fixtures.Color.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Color.Palette.js"></script>
+	<script src="./node_modules/rickshaw/src/js/Rickshaw.Series.js"></script>
     <meta charset="UTF-8">
     <title>Hello World!</title>
   </head>
@@ -14,10 +42,44 @@
 
     <div id="error"></div>
     <div id="ports"></div>
-  </body>
+	<div  id="rickshaw" style="width: 600px;height:400px;" >
+		<!--<script type="text/javascript" src="rickshaw_line.js"></script>-->
+	</div>
 
+	<div id="side_panel">
+		<h1>Random Data in the Future</h1>
+		<section><div id="legend"></div></section>
+		
+		<section>
+			<form id="offset_form">
+				<input type="radio" name="offset" id="stack" value="zero" checked>
+				<label for="stack">stack</label>
+				<input type="radio" name="offset" id="percent" value="expand">
+				<label for="percent">percent</label>
+				<input type="radio" name="offset" id="stream" value="silhouette">
+				<label for="stream">stream</label>
+				<input type="radio" name="offset" id="lines" value="lines">
+				<label for="lines">lines</label>
+			</form>
+		</section>
+
+		<section>
+			<h6>Smoothing</h6>
+			<div id="smoother"></div>
+		</section>
+		<section></section>
+	</div>
+
+	<div id="chart_container">
+		<div id="chart"></div>
+		<div id="timeline"></div>
+		<div id="slider"></div>
+	</div>
+  </body>
   <script>
     // You can also require other files to run in this process
+	require('./rickshaw_line.js')
+	require('./series.js')
     require('./renderer.js')
   </script>
 </html>
